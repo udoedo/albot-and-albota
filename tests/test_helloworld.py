@@ -20,7 +20,7 @@ from tests.helpers import MockBot, MockContext
 
 
 class BotCogTests(unittest.TestCase):
-    def test_helloworld_with_python(self):
+    def test_command_with_python_as_input(self):
         """Test if the `!hello python` command correctly print hello world in python."""
         mocked_bot = MockBot()
         bot_cog = helloworld.HelloWorld(mocked_bot)
@@ -30,7 +30,7 @@ class BotCogTests(unittest.TestCase):
         asyncio.run(bot_cog.hello.callback(bot_cog, mocked_context, lang="Python"))
         mocked_context.send.assert_called_with(text)
 
-    def test_hello_langs(self):
+    def test_langs_command_listing_all_available_languages(self):
         """Test if the !hellolangs prints all the available languages"""
         mocked_bot = MockBot()
         bot_cog = helloworld.HelloWorld(mocked_bot)
