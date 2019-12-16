@@ -26,7 +26,7 @@ class MyTestCase(unittest.TestCase):
         asyncio.run(bot_cog.orange.callback(bot_cog, mocked_context))
         mocked_context.send.assert_called_with(text)
 
-    def test_say_command_with_user_input(self):
+    def test_command_with_user_input(self):
         """Test if the `!hello python` command correctly print hello world in python."""
         mocked_bot = MockBot()
         bot_cog = memes.Memes(mocked_bot)
